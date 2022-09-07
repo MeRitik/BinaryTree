@@ -256,7 +256,7 @@ int maxPathSum(Node * root, int & Sum) {
     int leftSum = max(0, maxPathSum(root->left, Sum));
     int rightSum = max(0, maxPathSum(root->right, Sum));
 
-    Sum = max(Sum, leftSum + rightSum);
+    Sum = max(Sum, leftSum + rightSum + root->data);
 
     return (root->data + max(leftSum, rightSum));
 }
